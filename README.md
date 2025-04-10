@@ -1,6 +1,6 @@
 # WisaTix — Web App Jual Tiket Wisata
 
-![Laravel](https://img.shields.io/badge/Laravel-11-red?style=flat&logo=laravel)
+![Laravel](https://img.shields.io/badge/Laravel-12-red?style=flat&logo=laravel)
 ![Filament](https://img.shields.io/badge/Filament-v3-blueviolet?style=flat&logo=laravel)
 ![MySQL](https://img.shields.io/badge/MySQL-Database-informational?style=flat&logo=mysql)
 
