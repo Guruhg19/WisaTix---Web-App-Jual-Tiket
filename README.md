@@ -59,7 +59,7 @@
 
 ```bash
 # Clone repository
-https://github.com/username/tiketin.git
+https://github.com/Guruhg19/WisaTix---Web-App-Jual-Tiket.git
 
 # Masuk ke folder proyek
 cd WisaTix
