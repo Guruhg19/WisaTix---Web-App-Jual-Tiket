@@ -1,66 +1,90 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# WisaTix — Web App Jual Tiket Wisata
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+![Laravel](https://img.shields.io/badge/Laravel-12-red?style=flat&logo=laravel)
+![Filament](https://img.shields.io/badge/Filament-v3-blueviolet?style=flat&logo=laravel)
+![MySQL](https://img.shields.io/badge/MySQL-Database-informational?style=flat&logo=mysql)
 
-## About Laravel
+**WisaTix** adalah aplikasi penjualan tiket wisata berbasis web yang dibangun menggunakan **Laravel 11**, **Filament v3**, dan menerapkan **Service Repository Pattern**. Proyek ini merupakan bagian dari pembelajaran di kelas online:
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+> ** BWA -- Kelas Online — Laravel 11, Filament, Service Repository Pattern: Web Tiket**  
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+---
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 📚 Deskripsi Proyek
 
-## Learning Laravel
+- Membuat ERD dan desain database
+- Mengimplementasikan fitur autentikasi super admin
+- Membuat dashboard dan CMS untuk mengelola konten
+- Fitur pemesanan tiket, kategori, detail tiket, hingga transaksi pembayaran
+- Mengintegrasikan Laravel Blade dengan controller
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+---
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## 📚 Fitur Aplikasi
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- 🔑 **Autentikasi User (Super Admin)**
+- 📁 **Manajemen Tiket Wisata**:
+  - Kategori Tiket
+  - Detail Tiket
+  - CMS Halaman Konten
+- 🛒 **Pemesanan Tiket & Transaksi**
+- ⏳ **Integrasi Metode Pembayaran**
 
-## Laravel Sponsors
+---
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## 🧠 Hal yang Dipelajari
 
-### Premium Partners
+- ✅ Membangun website jualan tiket online dari awal
+- ✅ Menerapkan Service Repository Pattern dan prinsip MVC
+- ✅ Menggunakan Filament PHP untuk membuat dashboard super admin dengan cepat
+- ✅ Membuat fitur unggulan seperti booking dan pembayaran
+- ✅ Membangun website cepat, aman, dan maintainable dengan Laravel 11
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+---
 
-## Contributing
+## 👨‍💻 Teknologi yang Digunakan
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+| Tech             | Keterangan                            |
+|------------------|----------------------------------------|
+| Laravel 11       | PHP Framework untuk Back-End           |
+| Filament v3      | Admin Dashboard & CRUD Generator       |
+| MySQL            | Database Relasional                    |
+| Blade            | Templating Engine Laravel              |
+| TailwindCSS      | Styling modern                         |
+| Service Pattern  | Arsitektur bersih dan terstruktur      |
 
-## Code of Conduct
+---
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## 🚀 Cara Menjalankan Proyek
 
-## Security Vulnerabilities
+```bash
+# Clone repository
+https://github.com/Guruhg19/WisaTix---Web-App-Jual-Tiket.git
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+# Masuk ke folder proyek
+cd WisaTix
 
-## License
+# Install dependency
+composer install
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+# Salin file environment dan generate key
+cp .env.example .env
+php artisan key:generate
+
+# Setup database dan jalankan migration
+php artisan migrate --seed
+
+# Jalankan server lokal
+php artisan serve
+```
+
+---
+
+## 📝 Lisensi
+
+Proyek ini dibuat sebagai bagian dari pembelajaran. Digunakan untuk portfolio dan dikembangkan lebih lanjut.
+
+---
+
+Happy building! 🚀  
+
