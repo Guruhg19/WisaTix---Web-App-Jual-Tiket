@@ -4,7 +4,7 @@
 ![Filament](https://img.shields.io/badge/Filament-v3-blueviolet?style=flat&logo=laravel)
 ![MySQL](https://img.shields.io/badge/MySQL-Database-informational?style=flat&logo=mysql)
 
-**Tiketin** adalah aplikasi penjualan tiket wisata berbasis web yang dibangun menggunakan **Laravel 11**, **Filament v3**, dan menerapkan **Service Repository Pattern**. Proyek ini merupakan bagian dari pembelajaran di kelas online:
+**WisaTix** adalah aplikasi penjualan tiket wisata berbasis web yang dibangun menggunakan **Laravel 11**, **Filament v3**, dan menerapkan **Service Repository Pattern**. Proyek ini merupakan bagian dari pembelajaran di kelas online:
 
 > ** BWA -- Kelas Online — Laravel 11, Filament, Service Repository Pattern: Web Tiket**  
 
