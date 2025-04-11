@@ -20,6 +20,10 @@ use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TimePicker;
+use Filament\Tables\Columns\IconColumn;
+use Filament\Tables\Columns\ImageColumn;
+use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Filters\SelectFilter;
 
 class TicketResource extends Resource
 {
@@ -82,7 +86,7 @@ class TicketResource extends Resource
                     ->required(),
 
                     Select::make('seller_id')
-                    ->relationship('category','name')
+                    ->relationship('seller','name')
                     ->searchable()
                     ->preload()
                     ->required(),
@@ -90,7 +94,7 @@ class TicketResource extends Resource
                     TimePicker::make('open_time_at')
                     ->required(),
 
-                    TimePicker::make('open_time_at')
+                    TimePicker::make('close_time_at')
                     ->required(),
                 ])
             ]);
@@ -100,13 +104,31 @@ class TicketResource extends Resource
     {
         return $table
             ->columns([
-                //
+                TextColumn::make('name')
+                ->searchable(),
+
+                TextColumn::make('category.name'),
+
+                ImageColumn::make('thumbnail'),
+
+                IconColumn::make('is_popular')
+                ->boolean()
+                ->trueColor('success')
+                ->falseColor('danger')
+                ->trueIcon('heroicon-o-check-circle')
+                ->falseIcon('heroicon-o-x-circle')
+                ->label('Popular')
+
+
             ])
             ->filters([
-                //
+                SelectFilter::make('category_id')
+                ->label('category')
+                ->relationship('category','name')
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\ViewAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
