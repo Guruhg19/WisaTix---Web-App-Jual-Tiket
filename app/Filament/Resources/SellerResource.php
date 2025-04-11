@@ -23,6 +23,7 @@ class SellerResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-group';
 
+    protected static ?string $navigationGroup = 'Management';
     public static function form(Form $form): Form
     {
         return $form

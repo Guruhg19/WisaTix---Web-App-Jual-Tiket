@@ -18,9 +18,13 @@ use phpDocumentor\Reflection\Types\Callable_;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\BookingTransactionResource\Pages;
 use App\Filament\Resources\BookingTransactionResource\RelationManagers;
+// use Filament\Actions\Action;
+use Filament\Tables\Actions\Action;
+
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\ToggleButtons;
+use Filament\Notifications\Notification;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
@@ -31,6 +35,13 @@ class BookingTransactionResource extends Resource
     protected static ?string $model = BookingTransaction::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+
+    // Navigation Group
+    public static function getNavigationBadge(): ?string
+    {
+        return (string) BookingTransaction::where('is_paid', false)->count();
+    }
+    protected static ?string $navigationGroup = 'Customer';
 
 public static function form(Form $form): Form
 {
@@ -152,6 +163,23 @@ public static function form(Form $form): Form
             ->actions([
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\ViewAction::make(),
+
+                Action::make('approve')
+                    ->label('Approve')
+                    ->action(function (BookingTransaction $record) {
+                        $record->is_paid = true;
+                        $record->save();
+
+                        // Trigger the payment process notification
+                        Notification::make()
+                        ->title('Ticket Approved')
+                        ->success()
+                        ->body('Ticket has been approved successfully.')
+                        ->send();
+                    })
+                    ->color('success')
+                    ->requiresConfirmation()
+                    ->visible(fn (BookingTransaction $record) => !$record->is_paid)
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
