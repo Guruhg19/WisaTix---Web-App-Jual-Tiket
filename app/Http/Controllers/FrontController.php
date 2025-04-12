@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Ticket;
+use App\Models\Category;
 use Illuminate\Http\Request;
+use App\Services\FrontService;
 
 class FrontController extends Controller
 {
@@ -17,16 +20,19 @@ class FrontController extends Controller
     public function index()
     {
         $data = $this->frontService->getFrontPageData();
-
-        return view('welcome', compact('data'));
+        dd($data);
+        // return view('welcome', compact('data'));
     }
-    
 
-    // Konsep MVC
-    // public function index(){
-    //     $categories = Category::latest()->get();
-    //     $popuparTickets = Ticket::where('is_popular', true)->latest()->take(10)->get();
-    //     $newTickets = Ticket::latest()->take(10)->get();
-    //     return view('welcome', compact('categories', 'popuparTickets', 'newTickets'));
-    // }
+    public function details(Ticket $ticket){
+        dd($ticket);
+        // return view('front.details', compact('ticket'));
+    }
+
+    public function category(Category $category){
+        dd($category);
+        // return view('front.category',compact('category'));
+    }
+
+
 }

@@ -20,7 +20,7 @@ class FrontService
     }
 
     // Get Front Data
-    public function getFrontData()
+    public function getFrontPageData()
     {
         $categories = $this->categoryRepository->getAllCategories();
         $sellers = $this->sellerRepository->getAllSellers();
@@ -30,6 +30,10 @@ class FrontService
         return compact('categories', 'popularTickets', 'newTickets', 'sellers');
     }
 
+    // Get all Category
+    public function getAllCategories(){
+
+    }
 
 
 
