@@ -57,7 +57,7 @@
 
                             @forelse ($categories as $category)
                                 <div class="swiper-slide !w-fit">
-                                    <a href="category.html" class="card">
+                                    <a href="{{ route('front.category', $category->slug) }}" class="card">
                                         <div class="flex items-center w-fit rounded-full text-nowrap p-[14px_20px] gap-[10px] bg-[#F8F8F9]">
                                             <img src="{{Storage::url($category->icon)}}" class="w-6 h-6" alt="icon">
                                             <p class="font-bold text-sm leading-[21px]">{{ $category->name }}</p>
@@ -98,7 +98,7 @@
                         </div>
                     </div>
                 </section>
-                <section id="Available" class="flex flex-col gap-3 px-4 py-5 bg-[#F8F8F9] mb-[94px]">
+                <section id="Available" class="flex flex-col gap-3 px-4 py-5 bg -[#F8F8F9] mb-[94px]">
                     <h2 class="font-bold">Now Available</h2>
                     <div class="flex flex-col gap-3">
                         @forelse ($newTickets as $newTicket)
