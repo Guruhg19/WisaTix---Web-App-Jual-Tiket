@@ -13,12 +13,13 @@ class OrderConfirmed extends Mailable
 {
     use Queueable, SerializesModels;
 
+    public $booking;
     /**
      * Create a new message instance.
      */
-    public function __construct()
+    public function __construct($bookingTransaction)
     {
-        //
+        $this->booking = $bookingTransaction;
     }
 
     /**
@@ -27,7 +28,7 @@ class OrderConfirmed extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Order Confirmed',
+            subject: 'WisaTix: Order Confirmed!',
         );
     }
 
