@@ -78,7 +78,7 @@
                         <div class="swiper-wrapper">
                             @forelse ($sellers as $seller)
                                 <div class="swiper-slide !w-fit">
-                                    <a href="city.html" class="card">
+                                    <a href="{{ route('front.seller', $seller->slug) }}" class="card">
                                         <div class="relative flex items-end w-[170px] h-[200px] shrink-0 rounded-[30px] bg-[#D9D9D9] overflow-hidden">
                                             <img src="{{ Storage::url($seller->photo) }}" class="absolute w-full h-full object-cover" alt="thumbnail">
                                             <div class="flex items-center justify-between w-full h-fit rounded-[17px] border border-white/40 p-[8px_10px] mx-[10px] mb-[10px] bg-[#94959966] backdrop-blur-sm">
