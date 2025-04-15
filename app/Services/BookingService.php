@@ -55,33 +55,62 @@ class BookingService{
         return compact('booking','ticket');
     }
 
-    public function paymentStore(array $validated)
-    {
-        $booking = session('booking');
-        $bookingTransactionId = null;
+    // public function paymentStore(array $validated)
+    // {
+    //     $booking = session('booking');
+    //     $bookingTransactionId = null;
 
-        DB::transaction(function($validated, &$bookingTransactionId, $booking){
-            if(isset($validated['proof'])){
-                $proofPath = $validated['proof']->store('proofs','public');
-                $validated['proof'] = $proofPath;
-            }
+    //     DB::transaction(function($validated, &$bookingTransactionId, $booking){
+    //         if(isset($validated['proof'])){
+    //             $proofPath = $validated['proof']->store('proofs','public');
+    //             $validated['proof'] = $proofPath;
+    //         }
 
-            $validated['name'] = $booking['name'];
-            $validated['email'] = $booking['email'];
-            $validated['phone_number'] = $booking['phone_number'];
-            $validated['total_participant'] = $booking['total_participant'];
-            $validated['started_at'] = $booking['started_at'];
-            $validated['total_amount'] = $booking['total_amount'];
-            $validated['ticket_id'] = $booking['ticket_id'];
-            $validated['is_paid'] = false;
-            $validated['booking_trx_id'] = BookingTransaction::generateUnixTrxId();
+    //         $validated['name'] = $booking['name'];
+    //         $validated['email'] = $booking['email'];
+    //         $validated['phone_number'] = $booking['phone_number'];
+    //         $validated['total_participant'] = $booking['total_participant'];
+    //         $validated['started_at'] = $booking['started_at'];
+    //         $validated['total_amount'] = $booking['total_amount'];
+    //         $validated['ticket_id'] = $booking['ticket_id'];
+    //         $validated['is_paid'] = false;
+    //         $validated['booking_trx_id'] = BookingTransaction::generateUnixTrxId();
 
-            $newBooking = $this->bookingRepository->createBooking($validated);
-            $bookingTransactionId = $newBooking->id;
+    //         $newBooking = $this->bookingRepository->createBooking($validated);
+    //         $bookingTransactionId = $newBooking->id;
             
-        });
-        return $bookingTransactionId;
-    }
+    //     });
+    //     return $bookingTransactionId;
+    // }
+
+    public function paymentStore(array $validated)
+{
+    $booking = session('booking');
+    $bookingTransactionId = null;
+
+    DB::transaction(function () use (&$bookingTransactionId, $validated, $booking) {
+        if (isset($validated['proof'])) {
+            $proofPath = $validated['proof']->store('proofs', 'public');
+            $validated['proof'] = $proofPath;
+        }
+
+        $validated['name'] = $booking['name'];
+        $validated['email'] = $booking['email'];
+        $validated['phone_number'] = $booking['phone_number'];
+        $validated['total_participant'] = $booking['total_participant'];
+        $validated['started_at'] = $booking['started_at'];
+        $validated['total_amount'] = $booking['total_amount'];
+        $validated['ticket_id'] = $booking['ticket_id'];
+        $validated['is_paid'] = false;
+        $validated['booking_trx_id'] = BookingTransaction::generateUnixTrxId();
+
+        $newBooking = $this->bookingRepository->createBooking($validated);
+        $bookingTransactionId = $newBooking->id;
+    });
+
+    return $bookingTransactionId;
+}
+
 
 
 
