@@ -84,7 +84,7 @@ php artisan serve
 
 Proyek ini dibuat sebagai bagian dari pembelajaran. Digunakan untuk portfolio dan dikembangkan lebih lanjut.
 
----
+-----
 
 Happy building! 🚀  
 
