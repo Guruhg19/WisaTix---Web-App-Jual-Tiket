@@ -28,10 +28,10 @@
                     </a>
                     <p class="leading-[28px] text-center">We will check the payment and update the status to your email address</p>
                     <div class="flex flex-col gap-3">
-                        <a href="index.html" class="w-full rounded-full p-[14px_20px] text-white text-center bg-[#F97316] font-bold">
+                        <a href="{{ route('front.index') }}" class="w-full rounded-full p-[14px_20px] text-white text-center bg-[#F97316] font-bold">
                             Explore More Tickets
                         </a>
-                        <a href="check-booking.html" class="w-full rounded-full p-[14px_20px] text-white text-center bg-[#13181D] font-bold">
+                        <a href="{{ route('front.check_booking') }}" class="w-full rounded-full p-[14px_20px] text-white text-center bg-[#13181D] font-bold">
                             View My Booking
                         </a>
                     </div>
