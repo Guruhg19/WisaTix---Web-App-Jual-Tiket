@@ -10,9 +10,18 @@
 
 ---
 ## 🖼️ Cuplikan Tampilan
-![Image](https://github.com/user-attachments/assets/57fb8783-ea59-4ad9-904b-dd9a76efcf4c)
-![Image](https://github.com/user-attachments/assets/8cdf4486-ab39-4780-a407-8c481f9e8288)
+Admin
+![Image](https://github.com/user-attachments/assets/f3d72ec3-ecbf-448c-be76-4c8477c262ac)
+
+Front Layout
 ![Image](https://github.com/user-attachments/assets/e23c5007-6cd4-4ab4-826e-b8e934f4137b)
+
+Booking Layout
+![Image](https://github.com/user-attachments/assets/57fb8783-ea59-4ad9-904b-dd9a76efcf4c)
+
+Status Booking
+![Image](https://github.com/user-attachments/assets/8cdf4486-ab39-4780-a407-8c481f9e8288)
+
 
 ---
 
